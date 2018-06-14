@@ -1,6 +1,18 @@
 <?php
 /**
  * Get json from yml language file.
+ * An ajax request will be fired on first translation request only. There after it will only check in json object. 
+ * Include widget in layout head section.
+ * Settings:
+    plugin_modules:
+      i18n:
+        plugin: 'i18n/json_v1'
+    plugin:
+      i18n:
+        json_v1:
+          enabled: true
+ * Javascript:
+    alert(PluginI18nJson_v1.i18n('Text to translate'))
  */
 class PluginI18nJson_v1{
   /**
