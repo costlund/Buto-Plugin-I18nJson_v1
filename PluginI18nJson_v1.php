@@ -20,7 +20,8 @@ class PluginI18nJson_v1{
    */
   public static function widget_include(){
     $element = array();
-    $element[] = wfDocument::createHtmlElement('script', null, array('src' => '/plugin/i18n/json_v1/PluginI18nJson_v1.js', 'type' => 'text/javascript'));
+    wfPlugin::enable('include/js');
+    $element[] = wfDocument::createWidget('include/js', 'include', array('src' => '/plugin/i18n/json_v1/PluginI18nJson_v1.js'));    
     wfDocument::renderElement($element);
   }
   /**
