@@ -1,7 +1,12 @@
-version: '1.0'
+version: '1.1.0'
 history:
-  '1.0':
+  '1.1.0':
+    date: '2020-04-20'
+    label: More paths
+    description: 'Add more paths to load in json object.'
+  '1.0.0':
     date: '2019-01-09'
+    label: First version
     description: 'First version.'
 plugin:
   -

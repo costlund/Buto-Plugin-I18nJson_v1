@@ -55,7 +55,26 @@ class PluginI18nJson_v1{
           $json[] = array('key' => $key, 'value' => $value);
         }
       }
+      /**
+       * More paths.
+       */
+
+      $more_paths = wfPlugin::getModuleSettings(null, true)->get('path');
+      if($more_paths){
+        foreach ($more_paths as $key => $value) {
+          $filename = $value.'/'.$language.'.yml';
+          if(wfFilesystem::fileExist(wfArray::get($GLOBALS, 'sys/app_dir').$filename)){
+            $data = wfSettings::getSettings($filename);
+            foreach ($data as $key => $value) {
+              $json[] = array('key' => $key, 'value' => $value);
+            }
+          }
+        }
+      }
     }
+    /**
+     * 
+     */
     $json = json_encode($json);
     exit($json);
   }
