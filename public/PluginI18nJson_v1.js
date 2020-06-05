@@ -3,7 +3,14 @@ function plugin_i18n_json_v1(){
   this.setPath = function(path){
     PluginI18nJson_v1.data.path = path;
   }
-  this.i18n = function(str){
+  this.i18n = function(str, data){
+    /**
+     * If data is provided we skip ajax call.
+     */
+    if(data){
+      eval('if(data.'+str+'){str = data.'+str+';}else{}');
+      return str;
+    }
     /**
      * If i18n not set we make an ajax call.
      */

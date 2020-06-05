@@ -1,17 +1,21 @@
-version: '1.1.0'
+version: 1.2.0
 history:
-  '1.1.0':
+  1.2.0:
+    date: '2020-06-05'
+    label: 'Object in method'
+    description: 'Add object to method i18n.'
+  1.1.0:
     date: '2020-04-20'
-    label: More paths
+    label: 'More paths'
     description: 'Add more paths to load in json object.'
-  '1.0.0':
+  1.0.0:
     date: '2019-01-09'
-    label: First version
+    label: 'First version'
     description: 'First version.'
 plugin:
   -
     name: include/js
-    version: '1.0'
+    version: 1.1.0
 sys:
   -
     name: mercury
@@ -19,6 +23,6 @@ sys:
       - '1.0'
 php:
   - '7.2'
-author: Claes Östlund
-links:
+author: 'Claes Östlund'
+links: null
 description: ''
