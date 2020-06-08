@@ -2,15 +2,15 @@ version: 1.2.0
 history:
   1.2.0:
     date: '2020-06-05'
-    label: 'Object in method'
+    title: 'Object in method'
     description: 'Add object to method i18n.'
   1.1.0:
     date: '2020-04-20'
-    label: 'More paths'
+    title: 'More paths'
     description: 'Add more paths to load in json object.'
   1.0.0:
     date: '2019-01-09'
-    label: 'First version'
+    title: 'First version'
     description: 'First version.'
 plugin:
   -
