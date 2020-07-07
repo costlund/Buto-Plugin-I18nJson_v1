@@ -45,3 +45,9 @@ One could also translate with a object. Check plugin i18n/file_to_object how to 
 ```
 PluginI18nJson_v1.i18n('Close', {'Close': 'Stäng'})
 ```
+
+## Replace
+Add replace param.
+```
+alert(PluginI18nJson_v1.i18n("This file is to large (?file_size)", PluginUploadFile.i18n, [{'key': '?file_size', 'value': file.size}]));
+```

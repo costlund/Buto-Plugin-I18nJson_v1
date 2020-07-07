@@ -3,18 +3,17 @@ function plugin_i18n_json_v1(){
   this.setPath = function(path){
     PluginI18nJson_v1.data.path = path;
   }
-  this.i18n = function(str, data){
+  this.i18n = function(str, data, replace){
     /**
      * If data is provided we skip ajax call.
      */
     if(data){
       eval('if(data["'+str+'"]){str = data["'+str+'"];}else{}');
-      return str;
     }
     /**
      * If i18n not set we make an ajax call.
      */
-    if(!PluginI18nJson_v1.data.i18n){
+    if(!data && !PluginI18nJson_v1.data.i18n){
       $.ajax({
           url : PluginI18nJson_v1.data.path,
           type : "get",
@@ -29,7 +28,7 @@ function plugin_i18n_json_v1(){
     /**
      * Trying to translate.
      */
-    if(PluginI18nJson_v1.data.i18n){
+    if(!data && PluginI18nJson_v1.data.i18n){
       for(i=0;i<PluginI18nJson_v1.data.i18n.length;i++){
         if(PluginI18nJson_v1.data.i18n[i]['key']==str){
           return PluginI18nJson_v1.data.i18n[i]['value'];
@@ -37,7 +36,15 @@ function plugin_i18n_json_v1(){
       }
     }
     /**
-     * No match returns str.
+     * Replace
+     */
+    if(replace){
+      for(var i=0;i<replace.length;i++){
+        str = str.replace(replace[i].key, replace[i].value);
+      }
+    }
+    /**
+     *
      */
     return str;
   }
