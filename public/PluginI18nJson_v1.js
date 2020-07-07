@@ -8,7 +8,7 @@ function plugin_i18n_json_v1(){
      * If data is provided we skip ajax call.
      */
     if(data){
-      eval('if(data.'+str+'){str = data.'+str+';}else{}');
+      eval('if(data["'+str+'"]){str = data["'+str+'"];}else{}');
       return str;
     }
     /**

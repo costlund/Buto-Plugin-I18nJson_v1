@@ -1,5 +1,9 @@
-version: 1.2.0
+version: 1.2.1
 history:
+  1.2.1:
+    date: '2020-07-07'
+    title: 'I18N bug'
+    description: 'Fix error when I18N params contains space.'
   1.2.0:
     date: '2020-06-05'
     title: 'Object in method'
