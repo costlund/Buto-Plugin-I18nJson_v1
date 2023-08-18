@@ -58,10 +58,9 @@ class PluginI18nJson_v1{
       /**
        * More paths.
        */
-
-      $more_paths = wfPlugin::getModuleSettings(null, true)->get('path');
-      if($more_paths){
-        foreach ($more_paths as $key => $value) {
+      $more_paths = wfPlugin::getModuleSettings(null, true);
+      if($more_paths && $more_paths->get('path')){
+        foreach ($more_paths->get('path') as $key => $value) {
           $filename = $value.'/'.$language.'.yml';
           if(wfFilesystem::fileExist(wfArray::get($GLOBALS, 'sys/app_dir').$filename)){
             $data = wfSettings::getSettings($filename);
